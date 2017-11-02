@@ -23,6 +23,11 @@ We don't know how difficult it will be to model the agents. We do already have d
 We will work on replicating Groff's experiment first by creating our agents and setting their behavioral rules. It probably would not make sense to split up for this step, since we don't think there are multiple discrete subtasks for this step, so we will work on the replication together.
 
 ## References
+
+**Cohen, Lawrence E., and Marcus Felson. ["Social change and crime rate trends: A routine activity approach."](http://www.jstor.org/stable/2094589) American sociological review (1979): 588-608.**
+
+Cohen and Felson introduce the idea of routine activity theory in which they state that crime is not affected by social causes such as poverty or unemployment. They focus on the circumstances under which an individual carries out a crime. During their time, the conventional theories of crime was unable to explain why crime rates increased post World War II since the economy was on the rise. Their routine activity theory states that there was more crime post WWII since people were generally more wealthy and there was more to steal.
+
 **Groff, Elizabeth R. ["Simulation for theory testing and experimentation"](https://link.springer.com/article/10.1007/s10940-006-9021-z): An example using routine activity theory and street robbery." Journal of Quantitative Criminology 23.2 (2007): 75-103.**
 
 This paper presents a new approach to testing the routine activity theory. The routine activity theory is a criminology subfield developed by Marcus Felson and Lawrence E. Cohen. Routine activity theory is based on the premise that crime is committed regardless of social causes such as poverty, inequality, and unemployment. Some crimes that are well modelled by routine activity theory is copyright infringement, peer-to-peer file sharing, corporate crime, etc. The author of this paper, Elizabeth R. Groff, uses agent-based modelling to model street robbery since it involves the interaction of agents in a public place and is driven by economic gain, making it more of a rational decision than a crime such as assault. A wide variety of studies from surveys of individuals to macro and micro level data to represent routine activity in society. However, all of these studies struggled with separating constructs and accurately replicating crime patterns. Rather than the usual top-down approach, agent-based modelling is a bottom up approach that starts with individuals with characteristics and behavioural rules already implemented. This model introduces a new framework for more complete and rigourous tests of theories. It clearly supports the possibility of the basic premise of routine activity theory.
@@ -34,8 +39,4 @@ Malleson et. al. introduce a model in which they simulate burglaries that happen
 **https://Data.lacity.org/Api/Views/y8tr-7khq, 19 Apr. 2017.**
 
 This is data on the crime in the city of Los Angeles from 2010 to 2017. It is compiled by the LAPD and is currently available on the city website.
-
-**Cohen, Lawrence E., and Marcus Felson. ["Social change and crime rate trends: A routine activity approach."](http://www.jstor.org/stable/2094589) American sociological review (1979): 588-608.**
-
-Cohen and Felson introduce the idea of routine activity theory in which they state that crime is not affected by social causes such as poverty or unemployment. They focus on the circumstances under which an individual carries out a crime. During their time, the conventional theories of crime was unable to explain why crime rates increased post World War II since the economy was on the rise. Their routine activity theory states that there was more crime post WWII since people were generally more wealthy and there was more to steal.
 
