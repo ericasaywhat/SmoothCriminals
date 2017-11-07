@@ -22,6 +22,16 @@ We don't know how difficult it will be to model the agents. We do already have d
 
 We will work on replicating Groff's experiment first by creating our agents and setting their behavioral rules. It probably would not make sense to split up for this step, since we don't think there are multiple discrete subtasks for this step, so we will work on the replication together.
 
+## Figures
+
+![Sugarscape Image](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/figs2.JPG)
+
+This is what we expect the distribution of our agents to look like, especially once we implement dark corners and alleys inside our world.
+
+![Groff Image](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/figs.JPG)
+
+This is what we expect our results to look like once we plot distance from the agents' homes versus robberies as a function of time.
+
 ## References
 
 **Cohen, Lawrence E., and Marcus Felson. ["Social change and crime rate trends: A routine activity approach."](http://www.jstor.org/stable/2094589) American sociological review (1979): 588-608.**
