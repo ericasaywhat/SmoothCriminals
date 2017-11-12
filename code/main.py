@@ -1,14 +1,62 @@
-class citizen:
-  def __init__(self, wealth, timeAwayHome, capability):
-    self.wealth = wealth
-    self.timeAwayHome = timeAwayHome
-    self.capability = capability
+import random
+
+class Citizen:
+    def __init__(self, wealth):
+        self.wealth = wealth
+        self.isPopo = random.choice([True, False])
+
+    def step():
+        wealth += 5
+
+    def getRobbed():
+        wealth -= 1
+
+class Criminal(Citizen):
+    """
+    t: Time away from home
+    """
+    def __init__(self, wealth, t):
+        Citizen.__init__(self, wealth)
+        self.t = t
+
+
+    def step():
+        t += 1
+
+    def goHome():
+        t = 0
+
+    def decideToOffend(agents):
+        for agent in agents:
+            if agent.isPopo:
+                return False
+
+        capability = random.randint(-2, 2)
+        G = len(agents) - 2 + capability
+
+        if G > 1:
+            return False
+        elif G == 1:
+            p = random.choice([True, False])
+            return p
+
+        return True
+
+    def pickChump(agents):
+        def compare(a, b):
+            if a.wealth > b.wealth:
+                return 1
+            elif b.wealth > a.wealth:
+                return -1
+            else:
+                return 0
+
+        return max(agents, key=compare)
 
 
 
-
-
-class popo:
+# class Popo():
+    # def __init__(self):
 
 
 class CrimeWorld(Cell2D):
@@ -34,6 +82,10 @@ class CrimeWorld(Cell2D):
 
         # make the agents
         self.make_agents()
+
+        self.totalRobs = 0
+        self.robRate = 0
+
 
     def make_capacity(self):
         """Makes the capacity array."""
