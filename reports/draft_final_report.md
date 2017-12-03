@@ -14,7 +14,7 @@ In our simulated world, `CrimeWorld`, there are two types of agents: police offi
 
 #### Deciding to commit crimes
 
-A variety of factors affect an offender's decision to commit a crime. Consider several agents at a single node; some might be police, some might be guardians, and some might be offenders trying to find a guardian to make into a target. The first factor the offenders must consider is whether there are police at the node. The presence of a police officer is an absolute dealbreaker; no crimes may be committed in the presence of authority.
+According to Groff's experiment<sup>2</sup>, variety of factors affect an offender's decision to commit a crime. Consider several agents at a single node; some might be police, some might be guardians, and some might be offenders trying to find a guardian to make into a target. The first factor the offenders must consider is whether there are police at the node. The presence of a police officer is an absolute dealbreaker; no crimes may be committed in the presence of authority.
 
 If there are no police officers, however, the second factor the offenders must consider is the guardianship of other agents present - a variable represented by `G`.
 
@@ -38,7 +38,24 @@ If `S >= 0`, the offender determines that the target is suitably wealthy and rob
 
 If `S < 0`, the offender determines that the target is not suitably wealthy, so they move on to the next potential target in the node.
 
-### Experiments
+Figure XX below shows our simulation's results.
+
+[insert figure here](blah)
+
+| I   | J   | Mean Difference |
+| --- | --- | ---             |
+| 0.3 | 0.4 | -4.73           |
+| 0.3 | 0.5 | -10.91          |
+| 0.3 | 0.6 | -15.42          |
+| 0.3 | 0.7 | -19.78          |
+| 0.4 | 0.5 | -6.19           |
+| 0.4 | 0.6 | -10.69          |
+| 0.4 | 0.7 | -15.05          |
+| 0.5 | 0.6 | -4.51           |
+| 0.5 | 0.7 | -8.86           |
+| 0.6 | 0.7 | -4.36           |
+
+Figure XX
 
 ### Annotated Bibliography
 
