@@ -30,7 +30,7 @@ Now, let's assume `G <= 1` and the offender has decided to commit the crime. Whi
 
 #### `S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
 
-`S` depends on several other variables. `W`<sub>target</sub> is the wealth of the potential target and `W`<sub>offender</sub> is the wealth of the offender. And like our equation for `G`, `P` represents a randomly selected number, this time between -1 and 1, which represents the offender's perception of the wealth of the target. If `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they move on to the next potential target in the node.
+`S` depends on several other variables. `W`<sub>target</sub> is the wealth of the wealthiest potential target and `W`<sub>offender</sub> is the wealth of the offender. And like our equation for `G`, `P` represents a randomly selected number, this time between -1 and 1, which represents the offender's perception of the wealth of the target. If `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they do not rob them.
 
 The figures below show our simulation's results as a distribution of robberies across CrimeWorld. (We need to write interpretations for these results, and we will definitely do so for the final report.)
 
