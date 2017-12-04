@@ -18,7 +18,7 @@ According to Groff's experiment<sup>2</sup>, variety of factors affect an offend
 
 If there are no police officers, however, the second factor the offenders must consider is the guardianship of other agents present - a variable represented by `G`.
 
-`G = (N`<sub>agents</sub>` - 2) + P`
+##### `G = (N`<sub>agents</sub>` - 2) + P`
 
 `G` depends on two other variables. `N`<sub>agents</sub> is the total number of agents present at a given node, and we subtract 2 to account for the offender and their potential target. `P` is a randomly selected number between -2 and 2 that represents the offender's perception of the capability of the guardians who are present.
 
@@ -30,7 +30,7 @@ And finally, if `G > 1`, the offender determines that there are capable guardian
 
 Now, let's assume `G <= 1` and the offender has decided to commit the crime. Which agent should the offender offend? The offender must consider the suitability of the potential targets in the node, a variable we'll call `S`.
 
-`S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
+##### `S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
 
 `S` depends on several other variables. `W`<sub>target</sub> is the wealth of the potential target and `W`<sub>offender</sub> is the wealth of the offender. And like our equation for `G`, `P` represents a randomly selected number, this time between -1 and 1, which represents the offender's perception of the wealth of the target.
 
