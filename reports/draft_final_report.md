@@ -60,6 +60,10 @@ Figure 1 below shows our simulation's results as a distribution of robberies acr
 
 *Figure 2. Comparison of the average number of robberies per node for different percentages of time away from home.*
 
+### A CrimeWorld full of punishment
+
+Our version of CrimeWorld as implemented according to Groff's experiment does not include punishment for committing crimes. When an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node. If so, the offender simply does not rob anyone. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
+
 ## Annotated Bibliography
 
 **1. Cohen, Lawrence E., and Marcus Felson. ["Social change and crime rate trends: A routine activity approach."](http://www.jstor.org/stable/2094589) American sociological review (1979): 588-608.**
