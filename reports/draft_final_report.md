@@ -45,20 +45,20 @@ Figure 1 below shows our simulation's results as a distribution of robberies acr
 
 Figure 1. The distributions of robberies across `CrimeWorld` for 100, 200, 300, 400, 500, and 600 steps.
 
-| I   | J   | Mean Difference |
-| --- | --- | ---             |
-| 0.3 | 0.4 | -4.73           |
-| 0.3 | 0.5 | -10.91          |
-| 0.3 | 0.6 | -15.42          |
-| 0.3 | 0.7 | -19.78          |
-| 0.4 | 0.5 | -6.19           |
-| 0.4 | 0.6 | -10.69          |
-| 0.4 | 0.7 | -15.05          |
-| 0.5 | 0.6 | -4.51           |
-| 0.5 | 0.7 | -8.86           |
-| 0.6 | 0.7 | -4.36           |
+| I   | J   | Mean Difference (I - J) |
+| --- | --- | ---                     |
+| 0.3 | 0.4 | -4.73                   |
+| 0.3 | 0.5 | -10.91                  |
+| 0.3 | 0.6 | -15.42                  |
+| 0.3 | 0.7 | -19.78                  |
+| 0.4 | 0.5 | -6.19                   |
+| 0.4 | 0.6 | -10.69                  |
+| 0.4 | 0.7 | -15.05                  |
+| 0.5 | 0.6 | -4.51                   |
+| 0.5 | 0.7 | -8.86                   |
+| 0.6 | 0.7 | -4.36                   |
 
-Figure XX
+Figure 2. Comparison of the average number of robberies per node for different percentages of time away from home.
 
 ### Annotated Bibliography
 
