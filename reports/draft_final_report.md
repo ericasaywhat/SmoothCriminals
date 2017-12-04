@@ -14,7 +14,7 @@ In our simulated world, there are two types of agents: police officers and regul
 
 ### Deciding to commit crimes
 
-According to Groff's experiment<sup>2</sup>, variety of factors affect an offender's decision to commit a crime. Consider several agents at a single node; some might be police, some might be guardians, and some might be offenders trying to find a guardian to make into a target. The first factor the offenders must consider is whether there are police at the node. The presence of a police officer is an absolute dealbreaker; no crimes may be committed in the presence of authority. If there are no police officers, however, the offenders must consider several other factors, which are summarized in Figure 1.
+According to Groff's experiment<sup>2</sup>, a variety of factors affect an offender's decision to commit a crime. Consider several agents at a single node; some might be police, some might be guardians, and some might be offenders trying to find a guardian to make into a target. The first factor the offenders must consider is whether there are police at the node. The presence of a police officer is an absolute dealbreaker; no crimes may be committed in the presence of authority. If there are no police officers, however, the offenders must consider several other factors, which are summarized in Figure 1.
 
 ![decision tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/decision_tree.png)
 
@@ -32,12 +32,12 @@ Now, let's assume `G <= 1` and the offender has decided to commit the crime. Whi
 
 `S` depends on several other variables. `W`<sub>target</sub> is the wealth of the potential target and `W`<sub>offender</sub> is the wealth of the offender. And like our equation for `G`, `P` represents a randomly selected number, this time between -1 and 1, which represents the offender's perception of the wealth of the target. If `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they move on to the next potential target in the node.
 
-The figures below show our simulation's results as a distribution of robberies across `CrimeWorld`. 
+The figures below show our simulation's results as a distribution of robberies across CrimeWorld. (We need to write interpretations for these results, and we will definitely do so for the final report.)
 
 ![100 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_100.png) ![200 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_200.png) ![300 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_300.png)
 ![400 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_400.png) ![500 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_500.png) ![600 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_600.png)
 
-*Figure 2. The distributions of robberies across `CrimeWorld` for 100, 200, 300, 400, 500, and 600 steps.*
+*Figure 2. The distributions of robberies across CrimeWorld for 100, 200, 300, 400, 500, and 600 steps.*
 
 | I   | J   | Mean Difference (I - J) |
 | --- | --- | ---                     |
@@ -65,6 +65,8 @@ The figures below show our simulation's results as a distribution of robberies a
 ### A CrimeWorld full of punishment
 
 Our version of CrimeWorld as implemented according to Groff's experiment does not include punishment for committing crimes. When an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node. If so, the offender simply does not rob anyone. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
+
+(This experiment isn't done yet, but we're going to generate some nifty figures and things for the final report when it is.)
 
 ## Annotated Bibliography
 
