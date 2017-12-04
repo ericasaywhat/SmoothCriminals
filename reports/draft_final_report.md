@@ -56,7 +56,7 @@ The figures below show our simulation's results as a distribution of robberies a
 
 ![rate of robberies](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/rate.png)
 
-*Figure 5. The rate at which the number of robberies increased over time.*
+*Figure 5. The rate at which robberies occur over time.*
 
 ### A CrimeWorld full of punishment
 
