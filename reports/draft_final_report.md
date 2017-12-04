@@ -38,9 +38,12 @@ If `S >= 0`, the offender determines that the target is suitably wealthy and rob
 
 If `S < 0`, the offender determines that the target is not suitably wealthy, so they move on to the next potential target in the node.
 
-Figure XX below shows our simulation's results.
+Figure 1 below shows our simulation's results as a distribution of robberies across `CrimeWorld`. 
 
-[insert figure here](blah)
+![100 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_100.png) ![200 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_200.png) ![300 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_300.png)
+![400 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_400.png) ![500 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_500.png) ![600 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_600.png)
+
+Figure 1. The distributions of robberies across `CrimeWorld` for 100, 200, 300, 400, 500, and 600 steps.
 
 | I   | J   | Mean Difference |
 | --- | --- | ---             |
