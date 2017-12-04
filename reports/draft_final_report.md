@@ -54,6 +54,14 @@ The figures below show our simulation's results as a distribution of robberies a
 
 *Figure 3. Comparison of the average number of robberies per node for different percentages of time away from home.*
 
+![cumulative robberies](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/cumulative_robberies.png)
+
+*Figure 4. The cumulative number of robberies over time.*
+
+![rate of robberies](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/rate.png)
+
+*Figure 5. The rate at which the number of robberies increased over time.*
+
 ### A CrimeWorld full of punishment
 
 Our version of CrimeWorld as implemented according to Groff's experiment does not include punishment for committing crimes. When an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node. If so, the offender simply does not rob anyone. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
