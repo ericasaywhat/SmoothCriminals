@@ -2,23 +2,23 @@
 
 Erica Lee and Emily Yeh
 
-### Abstract
+## Abstract
 
 We design and implement an agent-based model of citizens in a simulated world we call CrimeWorld, where each citizen has their own characteristics and behavioral rules, including the citizen’s likelihood of committing crimes. This version of CrimeWorld includes clearly visible police, which deter criminals. Comparing our results to those of Groff in Simulation for theory testing and experimentation, we observe that our results behave qualitatively similarly. We then extend Groff's experiment by implementing a CrimeWorld with punishment for committing crimes. This CrimeWorld includes undercover police, who punish criminals if they catch them by taking away a large proportion of their wealth, thereby affecting their motivations to commit crimes. This experiment is still in progress, but our hypothesis is that the rate of crime will increase in this version of CrimeWorld because losing wealth will motivate the criminals to commit more crimes.
 
-### Introduction
+## Introduction
 
 The idea behind routine activity theory (RAT) is that if the frequency of convergence between offenders, guardians, and targets increases, crime rates may increase even if the absolute number of motivated offenders remains constant. In other words, as individuals spend more time away from home, crime rates increase. We'll explore RAT by simulating many `Citizens` inside of a `CrimeWorld`.
 
 In our simulated world, `CrimeWorld`, there are two types of agents: police officers and regular citizens. Regular citizens can have a variety of roles: some are offenders (agents who commit crimes), some are guardians (agents who prevent crimes), and some are targets (agents against whom crimes are committed).
 
-#### Deciding to commit crimes
+### Deciding to commit crimes
 
 According to Groff's experiment<sup>2</sup>, variety of factors affect an offender's decision to commit a crime. Consider several agents at a single node; some might be police, some might be guardians, and some might be offenders trying to find a guardian to make into a target. The first factor the offenders must consider is whether there are police at the node. The presence of a police officer is an absolute dealbreaker; no crimes may be committed in the presence of authority.
 
 If there are no police officers, however, the second factor the offenders must consider is the guardianship of other agents present - a variable represented by `G`.
 
-##### `G = (N`<sub>agents</sub>` - 2) + P`
+#### `G = (N`<sub>agents</sub>` - 2) + P`
 
 `G` depends on two other variables. `N`<sub>agents</sub> is the total number of agents present at a given node, and we subtract 2 to account for the offender and their potential target. `P` is a randomly selected number between -2 and 2 that represents the offender's perception of the capability of the guardians who are present.
 
@@ -30,7 +30,7 @@ And finally, if `G > 1`, the offender determines that there are capable guardian
 
 Now, let's assume `G <= 1` and the offender has decided to commit the crime. Which agent should the offender offend? The offender must consider the suitability of the potential targets in the node, a variable we'll call `S`.
 
-##### `S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
+#### `S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
 
 `S` depends on several other variables. `W`<sub>target</sub> is the wealth of the potential target and `W`<sub>offender</sub> is the wealth of the offender. And like our equation for `G`, `P` represents a randomly selected number, this time between -1 and 1, which represents the offender's perception of the wealth of the target.
 
@@ -43,7 +43,7 @@ Figure 1 below shows our simulation's results as a distribution of robberies acr
 ![100 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_100.png) ![200 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_200.png) ![300 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_300.png)
 ![400 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_400.png) ![500 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_500.png) ![600 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_600.png)
 
-Figure 1. The distributions of robberies across `CrimeWorld` for 100, 200, 300, 400, 500, and 600 steps.
+*Figure 1. The distributions of robberies across `CrimeWorld` for 100, 200, 300, 400, 500, and 600 steps.*
 
 | I   | J   | Mean Difference (I - J) |
 | --- | --- | ---                     |
@@ -58,9 +58,9 @@ Figure 1. The distributions of robberies across `CrimeWorld` for 100, 200, 300, 
 | 0.5 | 0.7 | -8.86                   |
 | 0.6 | 0.7 | -4.36                   |
 
-Figure 2. Comparison of the average number of robberies per node for different percentages of time away from home.
+*Figure 2. Comparison of the average number of robberies per node for different percentages of time away from home.*
 
-### Annotated Bibliography
+## Annotated Bibliography
 
 **1. Cohen, Lawrence E., and Marcus Felson. ["Social change and crime rate trends: A routine activity approach."](http://www.jstor.org/stable/2094589) American sociological review (1979): 588-608.**
 
