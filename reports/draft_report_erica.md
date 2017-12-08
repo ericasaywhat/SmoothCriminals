@@ -1,4 +1,4 @@
-#Review of Adam Novotny and Changjun Lim's "A Multiple-Agent Based Model of Evacuation"
+# Review of Adam Novotny and Changjun Lim's "A Multiple-Agent Based Model of Evacuation"
 
 ###### Erica Lee
 
