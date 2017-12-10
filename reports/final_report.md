@@ -30,10 +30,18 @@ The figures below show our simulation's results as a distribution of robberies a
 
 ## II. Replication
 
+![groff's results - distribution](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/groff_area_distribution.png)
+
+*Figure 2.1. The distributions of robberies across Groff's model for varying randomization conditions.*
+
 ![100 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_100.png) ![200 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_200.png) ![300 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_300.png)
 ![400 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_400.png) ![500 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_500.png) ![600 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_600.png)
 
-*Figure 2. The distributions of robberies across CrimeWorld for 100, 200, 300, 400, 500, and 600 steps.*
+*Figure 2.2. The distributions of robberies across CrimeWorld for 100, 200, 300, 400, 500, and 600 steps.*
+
+**COMMENT ON DIFFERENCES BETWEEN RESULTS HERE**
+
+![groff's results - table](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/groff_table.png)
 
 | I   | J   | Mean Difference (I - J) |
 | --- | --- | ---                     |
@@ -48,7 +56,7 @@ The figures below show our simulation's results as a distribution of robberies a
 | 0.5 | 0.7 | -8.86                   |
 | 0.6 | 0.7 | -4.36                   |
 
-*Figure 3. Comparison of the average number of robberies per node for different percentages of time away from home.*
+*Figure 3. Comparison of the average number of robberies per node for different percentages of time away from home. The top table displays results from Groff's experiment,<sup>3</sup> while the bottom table displays results from our replication of Groff's model.*
 
 ![cumulative robberies](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/cumulative_robberies.png)
 
