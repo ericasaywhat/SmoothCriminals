@@ -76,8 +76,7 @@ We hypothesize that when deterrence in the form of punishment is introduced to C
 
 #### Since we now have punishment, CrimeWorld 2.0 includes motivation, in which motivation increases faster the less wealth the citizen has. Motivation is also reliant on how many times the citizen has been punished as well as how many times the citizen has successfully committed a crime.
 
-**INSERT FORMULA HERE**
-#### If the 
+![formula](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/formula.png)
 
 
 
