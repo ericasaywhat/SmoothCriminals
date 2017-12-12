@@ -60,13 +60,21 @@ The figures below show our simulation's results as a distribution of robberies a
 
 *Figure 3. Comparison of the average number of robberies per node for different percentages of time away from home. The top table displays results from Groff's experiment,<sup>3</sup> while the bottom table displays results from our replication of Groff's model.*
 
-### III. A CrimeWorld full of punishment
+## III. A CrimeWorld full of punishment
 
 Our version of CrimeWorld, as implemented according to Groff's experiment, does not include punishment for committing crimes. In fact, when an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node, and if so, the offender simply does not rob anyone, effectively avoiding punishment. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
 
 We hypothesize that when deterrence in the form of punishment is introduced to CrimeWorld, the number of crimes committed will increase. This contradicts the rationale behind deterrence, which is that when an offender is punished, the frequency and likelihood of future offenses is reduced.<sup>2</sup> The reasoning behind our hypothesis is that the factors that drive offenders to commit crimes outweigh the factors that deter them; successfully committing a crime and needing more wealth both contribute to an offender's motivation to commit crime, while only being caught lowers that motivation. Furthermore, people in a state where they cannot afford the necessary living expenses of their location any longer are more likely to turn to crime in order to improve their situations, since they have little left to lose.
 
-(This experiment isn't done yet, but we're going to generate some nifty figures and things for the final report when it is.)
+**INSERT WHAT WE CHANGE HERE**
+
+### A. Results
+
+![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)
+
+![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
+
+**INSERT INTERPRETATIONS HERE**
 
 ## IV. Annotated Bibliography
 
