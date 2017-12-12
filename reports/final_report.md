@@ -32,6 +32,8 @@ The figures below show our simulation's results as a distribution of robberies a
 
 ## II. Replication
 
+#### In our replication, all citizens' start with a wealth of 5 which increase by 5 per time step where each time step represents an hour. INSERT NUMBERS AND CITATIONS HERE FOR SEATTLE. Citizens start out at home and, for every time step, makes a uniform random selection of the four cardinal directions and move 5 nodes in that direction. In each time step 20% of the citizens have the potential to become criminals and follow the offender's decision tree to decide whether or not to commit the crime. If their wealth is below 0, however, they will immediately choose to commit the crime. Note that people cannot rob or be robbed if they are at home.
+
 ![groff's results - distribution](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/groff_area_distribution.png)
 
 *Figure 2.1. The distributions of robberies across Groff's model for varying randomization conditions.*
@@ -42,6 +44,7 @@ The figures below show our simulation's results as a distribution of robberies a
 *Figure 2.2. The distributions of robberies across CrimeWorld for 100, 200, 300, 400, 500, and 600 steps.*
 
 **COMMENT ON DIFFERENCES BETWEEN RESULTS HERE**
+#### In Figure 2.1 the distribution of robberies in Groff's model shows that there is an area of higher crimes committed that emerges where the map bottle necks and where the nodes are most dense.
 
 ![groff's results - table](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/groff_table.png)
 
@@ -60,6 +63,8 @@ The figures below show our simulation's results as a distribution of robberies a
 
 *Figure 3. Comparison of the average number of robberies per node for different percentages of time away from home. The top table displays results from Groff's experiment,<sup>3</sup> while the bottom table displays results from our replication of Groff's model.*
 
+#### From Figure 2, we can see that the differences in average number of robberies in CrimeWorld quantitatively differ from that of Groff's implementation. We suspect that this is because her simulation takes into account the shape and neighborhoods of Seattle. Qualitatively, however, the differences in average number of robberies in Crimworld follows the pattern of that in Groff's simulation.
+
 ## III. A CrimeWorld full of punishment
 
 Our version of CrimeWorld, as implemented according to Groff's experiment, does not include punishment for committing crimes. In fact, when an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node, and if so, the offender simply does not rob anyone, effectively avoiding punishment. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
@@ -68,13 +73,23 @@ We hypothesize that when deterrence in the form of punishment is introduced to C
 
 **INSERT WHAT WE CHANGE HERE**
 
-### A. Results
+#### In CrimeWorld 2.0, citizens start out with different wealths and each have different incomes. There will also be citizens who have wealth but don't have a job, so they do not have income, as well as citizens, who don't start out with wealth but have a steady income. CrimeWorld 2.0 also implements a cost of living. INSERT NUMBERS AND CITE. The police officers here will be undercover and if a crime is committed while the police officer is in that node, the citizens will be punished. We run the simulation for two different types of pushishments: a set fine for every offender and a fine that is proportional to how wealthy the offender is.
 
+#### Since we now have punishment, CrimeWorld 2.0 includes motivation, in which motivation increases faster the less wealth the citizen has. Motivation is also reliant on how many times the citizen has been punished as well as how many times the citizen has successfully committed a crime.
+
+**INSERT FORMULA HERE**
+#### If the _____
+
+
+
+### A. Results
 ![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)
 
 ![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
 
+
 **INSERT INTERPRETATIONS HERE**
+#### In comparing Figures 5 and 6, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. 
 
 ## IV. Annotated Bibliography
 
