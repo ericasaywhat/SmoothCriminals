@@ -77,7 +77,7 @@ We hypothesize that when deterrence in the form of punishment is introduced to C
 
 ![formula](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/formula.png)
 
-
+#### When a robbery is committed, the motivation is recalculated with a formula that takes into account the number of times the offender successfully or unsuccessfully commits a crime. The more successful crimes committed, the less their motivation decreases when caught. If the offender is caught committing a crime but the number of their successes exceed failures to commit a crime, their motivation isn't recalculated but instead decreased. If the offender isn't caught committing a crime and their successes don't exceed their failures, their motivation is still recalculated to take those numbers into account. Likewise, if the offender is not caught committing the crime but the number of their failures exceed successes to commit a crime, their motivation isn't recalculated but instead increased. If the offender is caught committing the crime and their successes exceeds their failures, their motivation is still recalculated to take those numbers into account. 
 
 ### A. Results
 ![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)
@@ -86,7 +86,8 @@ We hypothesize that when deterrence in the form of punishment is introduced to C
 
 
 **INSERT INTERPRETATIONS HERE**
-#### In comparing Figures 4 and 5, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. 
+#### In comparing Figures 4 and 5, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. Figure 5 demonstrates an unexpected behaviour of periodic rises and falls. There is an overall increase in the number of robberies, but at punishment ratios of 0.2, 0.5 and 0.8 the number of robberies drop. 
+
 
 ## IV. Annotated Bibliography
 
