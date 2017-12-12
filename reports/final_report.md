@@ -38,8 +38,8 @@ The figures below show our simulation's results as a distribution of robberies a
 
 *Figure 2.1. The distributions of robberies across Groff's model for varying randomization conditions.*
 
-![100 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_100.png) ![200 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_200.png) ![300 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_300.png)
-![400 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_400.png) ![500 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_500.png) ![600 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_600.png)
+![100 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_100.png) 100 steps ![200 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_200.png) 200 steps ![300 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_300.png) 300 steps
+![400 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_400.png) 400 steps ![500 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_500.png) 500 steps ![600 steps](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/1000_600.png) 600 steps
 
 *Figure 2.2. The distributions of robberies across CrimeWorld for 100, 200, 300, 400, 500, and 600 steps.*
 
