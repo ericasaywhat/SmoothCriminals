@@ -42,7 +42,7 @@ After running simulations using our model, we generate the following figures. Fo
 
 *Figure 2.2. The distributions of crimes across CrimeWorld for 100, 200, 300, 400, 500, and 600 steps.*
 
-In Figure 2.1, the distribution of crimes in Groff's model shows that there is an area of higher crimes committed that emerges where there is a bottleneck present in the map, and where the nodes are the most dense. This figure is generated using varying randomization conditions, which are based on the amount of time the agents in the model spend away from home (from 30% to 70%). **COMMENT ON 2.2 HERE**
+Figures 2.1 and 2.2 display the spatial distribution of crimes committed across Seattle and CrimeWorld, respectively. In Figure 2.1, the distribution of crimes in Groff's model shows that there is an area of higher crimes committed that emerges where there is a bottleneck present in the map, and where the nodes are the most dense. This figure is generated using varying randomization conditions, which are based on the amount of time the agents in the model spend away from home (from 30% to 70%) to support Groff's investigation into routine activity theory. Figure 2.2 displays our model's results, which are not based on randomization conditions nor routine activity theory, but rather time steps. Similar to Figure 2.1, Figure 2.2 shows that there are dark areas of CrimeWorld where more crimes are committed, which darken as more time passes. These dark areas are close to clusters where Citizens live, since they return to their homes regularly.
 
 ![groff's results - table](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/groff_table.png)
 
