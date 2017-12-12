@@ -32,7 +32,7 @@ Now, assume `G <= 1` and the offender has decided to commit the crime. Which age
 
 ### B. Results of our initial model
 
-After running simulations using our model, we generate the following figures. For reference, the figures Groff generates in her own experiment are also shown.
+After running simulations using our model, we generate the following figures to show the spatial distribution of crimes committed. For reference, the figures Groff generates in her own experiment are also shown.
 
 ![groff's results - distribution](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/groff_area_distribution.png)
 
@@ -44,7 +44,11 @@ After running simulations using our model, we generate the following figures. Fo
 
 Figures 2.1 and 2.2 display the spatial distribution of crimes committed across Seattle and CrimeWorld, respectively. In Figure 2.1, the distribution of crimes in Groff's model shows that there is an area of higher crimes committed that emerges where there is a bottleneck present in the map, and where the nodes are the most dense. This figure is generated using varying randomization conditions, which are based on the amount of time the agents in the model spend away from home (from 30% to 70%) to support Groff's investigation into routine activity theory. Figure 2.2 displays our model's results, which are not based on randomization conditions nor routine activity theory, but rather time steps. Similar to Figure 2.1, Figure 2.2 shows that there are dark areas of CrimeWorld where more crimes are committed, which darken as more time passes. These dark areas are close to clusters where Citizens live, since they return to their homes regularly.
 
-![groff's results - table](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/groff_table.png)
+For the purposes of measuring how closely our model matches Groff's, we also find the mean difference between the number of crimes committed for various conditions relating to how much time each Citizen spends away from their home. Figures 3.1 and 3.2 show Groff's results and our results, respectively.
+
+![groff's results](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/groff_table.png)
+
+*Figure 3.1. A comparison of the average number of robberies per node for different percentages of time away from home in Groff's model.*
 
 | I   | J   | Mean Difference (I - J) |
 | --- | --- | ---                     |
@@ -59,17 +63,30 @@ Figures 2.1 and 2.2 display the spatial distribution of crimes committed across 
 | 0.5 | 0.7 | -8.86                   |
 | 0.6 | 0.7 | -4.36                   |
 
-*Figure 3. Comparison of the average number of robberies per node for different percentages of time away from home. The top table displays results from Groff's experiment,<sup>3</sup> while the bottom table displays results from our replication of Groff's model.*
+*Figure 3.2. A comparison of the average number of robberies per node for different percentages of time away from home in our model.*
 
-#### From Figure 2, we can see that the differences in average number of robberies in CrimeWorld quantitatively differ from that of Groff's implementation. We suspect that this is because her simulation takes into account the shape and neighborhoods of Seattle. Qualitatively, however, the differences in average number of robberies in Crimworld follows the pattern of that in Groff's simulation.
+From Figure 3, we observe that the differences in the average numbers of robberies in CrimeWorld for varying times away from home quantitatively differ from that of Groff's implementation. This is likely due to the fact that her simulation takes into account the shape and neighborhoods of Seattle, and because Groff runs her simulations for a year's worth of time, whereas we run ours for about 30 days due to time limitations. Qualitatively, however, the differences in average number of robberies in Crimeworld follow the pattern of that in Groff's simulation; if we multiply each value we obtain by a factor between 3 and 5, we output values that are the same as Groff's. For example, for `I=0.3` and `J=0.4`, the mean difference is -21.39 in Groff's experiment and -4.73 in ours. If we multiply our result by 4.52, however, our result matches Groff's. Similarly, for `I=0.3` and `J=0.5`, the mean difference is -40.58 in Groff's experiment and -10.91 in ours. Again, if we multiply our result by 3.72, our result matches Groff's. We summarize the factoral differences between our results and Groff's in Figure 4.
+
+| I   | J   | Our Mean Difference | Groff's Mean Difference | Factor Difference (Groff's / Our Results) |
+| --- | --- | ---                 | ---                     | ---                                       |
+| 0.3 | 0.4 | -4.73               | -21.39                  | 4.52                                      |
+| 0.3 | 0.5 | -10.91              | -40.58                  | 3.72                                      |
+| 0.3 | 0.6 | -15.42              | -63.45                  | 4.11                                      |
+| 0.3 | 0.7 | -19.78              | -84.37                  | 4.27                                      |
+| 0.4 | 0.5 | -6.19               | -19.19                  | 3.10                                      |
+| 0.4 | 0.6 | -10.69              | -42.05                  | 3.93                                      |
+| 0.4 | 0.7 | -15.05              | -62.98                  | 4.18                                      |
+| 0.5 | 0.6 | -4.51               | -22.87                  | 5.07                                      |
+| 0.5 | 0.7 | -8.86               | -43.79                  | 4.93                                      |
+| 0.6 | 0.7 | -4.36               | -20.92                  | 4.80                                      |
+
+*Figure 4. Factoral differences between our results and Groff's results for the mean differences between the average numbers of robberies per node for different percentages of time away from home.*
 
 ## III. A CrimeWorld full of punishment
 
 Our version of CrimeWorld, as implemented according to Groff's experiment, does not include punishment for committing crimes. In fact, when an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node, and if so, the offender simply does not rob anyone, effectively avoiding punishment. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
 
 We hypothesize that when deterrence in the form of punishment is introduced to CrimeWorld, the number of crimes committed will increase. This contradicts the rationale behind deterrence, which is that when an offender is punished, the frequency and likelihood of future offenses is reduced.<sup>2</sup> The reasoning behind our hypothesis is that the factors that drive offenders to commit crimes outweigh the factors that deter them; successfully committing a crime and needing more wealth both contribute to an offender's motivation to commit crime, while only being caught lowers that motivation. Furthermore, people in a state where they cannot afford the necessary living expenses of their location any longer are more likely to turn to crime in order to improve their situations, since they have little left to lose.
-
-**INSERT WHAT WE CHANGE HERE**
 
 #### In CrimeWorld 2.0, citizens start out with different wealths and each have different incomes. There will also be citizens who have wealth but don't have a job, so they do not have income, as well as citizens, who don't start out with wealth but have a steady income. CrimeWorld 2.0 also implements a cost of living. INSERT NUMBERS AND CITE. The police officers here will be undercover and if a crime is committed while the police officer is in that node, the citizens will be punished. We run the simulation for two different types of pushishments: a set fine for every offender and a fine that is proportional to how wealthy the offender is.
 
