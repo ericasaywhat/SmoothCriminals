@@ -78,7 +78,7 @@ We hypothesize that when deterrence in the form of punishment is introduced to C
 #### Since we now have punishment, CrimeWorld 2.0 includes motivation, in which motivation increases faster the less wealth the citizen has. Motivation is also reliant on how many times the citizen has been punished as well as how many times the citizen has successfully committed a crime.
 
 **INSERT FORMULA HERE**
-#### If the _____
+#### If the 
 
 
 
@@ -89,7 +89,7 @@ We hypothesize that when deterrence in the form of punishment is introduced to C
 
 
 **INSERT INTERPRETATIONS HERE**
-#### In comparing Figures 5 and 6, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. 
+#### In comparing Figures 4 and 5, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. 
 
 ## IV. Annotated Bibliography
 
