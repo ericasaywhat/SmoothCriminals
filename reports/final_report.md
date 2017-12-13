@@ -114,6 +114,7 @@ When a robbery is committed, motivation is recalculated with this formula. The m
 After running simulations using our new model, we generate the following figures to show the number of crimes committed for differing values and proportions of punishment.
 
 ![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)
+
 *Figure 9.1. The number of crimes committed for varying values of punishment.*
 
 ![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
