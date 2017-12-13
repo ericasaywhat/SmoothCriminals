@@ -32,7 +32,7 @@ Now, assume `G <= 1` and the offender has decided to commit the crime. Which age
 
 #### `S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
 
-In Groff's implementation, if `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they do not rob them.
+In Groff's implementation, if `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they do not rob them. Groff uses GIS software, which is why it is necessary for Groff to use `S` to determine whether to rob a target. Since we do not use GIS software, however, we remove `S` from the simulation since offenders in our model look for the wealthiest citizen in the nodes they are in to rob, thereby removing the redundancy of checking guardian capability.
 
 ### B. Results of our initial model
 
@@ -118,7 +118,7 @@ After running simulations using our new model, we generate the following figures
 
 *Figure 8.1. The number of crimes committed for varying values of punishment.*
 
-![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
+![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio1.png)
 
 *Figure 8.2. The number of crimes committed for varying proportions of punishment.*
 
