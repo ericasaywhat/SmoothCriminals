@@ -32,7 +32,7 @@ Now, assume `G <= 1` and the offender has decided to commit the crime. Which age
 
 #### `S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
 
-In Groff's implementation, if `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they do not rob them. Since we are using Python and not the GIS software, however, we remove S from the simulation since our criminal looks for the wealthiest citizen in the node to rob and remove the redundancy of checking guardian capability.
+In Groff's implementation, if `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they do not rob them.
 
 ### B. Results of our initial model
 
@@ -90,24 +90,25 @@ From Figure 3.2, we observe that the differences in the average numbers of robbe
 
 Our version of CrimeWorld, as implemented according to Groff's experiment, does not include punishment for committing crimes. In fact, when an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node, and if so, the offender simply does not rob anyone, effectively avoiding punishment. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
 
-![altered_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/GroffAlteredDecisionTree.png)
-*Figure 6. The offender's decision tree in CrimeWorld*
-
 We hypothesize that when deterrence in the form of punishment is introduced to CrimeWorld, the number of crimes committed will increase. This contradicts the rationale behind deterrence, which is that when an offender is punished, the frequency and likelihood of future offenses is reduced.<sup>2</sup> The reasoning behind our hypothesis is that the factors that drive offenders to commit crimes outweigh the factors that deter them; successfully committing a crime and needing more wealth both contribute to an offender's motivation to commit crime, while only being caught lowers that motivation. Furthermore, people in a state where they cannot afford the necessary living expenses of their location any longer are more likely to turn to crime in order to improve their situations, since they have little left to lose.
 
-In CrimeWorld 2.0, Citizens start out with different values for wealth and income. As a result, we introduce economically diverse Citizens; there are some Citizens who have wealth but no income (potentially like real-world retirees), some Citizens who have income but no initial wealth (potentially like real-world immigrants with jobs), and some Citizens who have no wealth and no income (potentially like real-world homeless people), as well as others. We also implement a cost of living value, based on the cost of living in Seattle, which we calculate to be approximately $53,712 per year.<sup>4</sup> Another major change we implement from our original model is that the police officers in CrimeWorld 2.0 are undercover, such that if a crime is committed while a police officer is in a given node, the Citizen(s) who commit a crime will be punished. We run our simulation for two different types of punishments; each offending Citizen pays either a set fine for every crime they are caught committing, or a fine that is proportional to how wealthy the Citizen is.
+In CrimeWorld 2.0, each Citizen starts out with different values for wealth and for income. As a result, we introduce economically diverse Citizens; there are some Citizens who have wealth but no income (potentially like real-world retirees), some Citizens who have income but no initial wealth (potentially like real-world immigrants with jobs), and some Citizens who have no wealth and no income (potentially like real-world homeless people), as well as others. We also implement a cost of living value, based on the cost of living in Seattle, which we calculate to be approximately $53,712 per year.<sup>4</sup> Another major change we implement from our original model is that the police officers in CrimeWorld 2.0 are undercover, such that if a crime is committed while a police officer is in a given node, the Citizen(s) who commit a crime will be punished. We run our simulation for two different types of punishments; each offending Citizen pays either a set fine for every crime they are caught committing, or a fine that is proportional to how wealthy the Citizen is.
+
+The decision tree an offender uses to decide whether to commit a crime under CrimeWorld 2.0's new environment is shown in Figure 6.
 
 ![wealth_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/ShrewdCitizenDecisionTree.png)
-*Figure 7. The offender's decision tree based on wealth in CrimeWorld 2.0*
+*Figure 6. The offender's decision tree based on wealth in CrimeWorld 2.0.*
 
 With the introduction of punishment, we also implement motivation, the main mechanism that determines whether a Citizen commits a crime. Motivation increases depending on how little wealth a Citizen has and how many times a Citizen successfully commits crimes, and decreases depending on how many times a Citizen has been punished. These relationships are defined by the equation below, where `M` is motivation, `S` is the number of times a Citizen succeeds in committing crime, and `C` is the number of times a Citizen is caught committing crime. 
 
-![motivation_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/MotivatedDecisionTree.png)
-*Figure 8. The offender's decision tree based on motivation in CrimeWorld*
-
 ![formula](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/formula.png)
 
-When a robbery is committed, motivation is recalculated with this formula. The more successful an offender is in committing crimes, the less their motivation decreases when they are caught. If an offender is caught committing a crime, but the number of times they succeed exceeds the number of times they fail, their motivation is not recalculated, but instead, it decreases. If the offender is not caught committing a crime and the number of times they succeed does not exceed the number of times they fail, their motivation is still recalculated in order to take these values into account. Likewise, if an offender is not caught committing a crime but the number of their failures exceeds their successes, their motivation is not recalculated, but instead, it increases. If an offender is caught committing a crime and their successes exceeds their failures, their motivation is still recalculated to take these values into account. 
+When a robbery is committed, motivation is recalculated with this formula. The more successful an offender is in committing crimes, the less their motivation decreases when they are caught. If an offender is caught committing a crime, but the number of times they succeed exceeds the number of times they fail, their motivation is not recalculated, but instead, it decreases. If the offender is not caught committing a crime and the number of times they succeed does not exceed the number of times they fail, their motivation is still recalculated in order to take these values into account. Likewise, if an offender is not caught committing a crime but the number of their failures exceeds their successes, their motivation is not recalculated, but instead, it increases. If an offender is caught committing a crime and their successes exceeds their failures, their motivation is still recalculated to take these values into account.
+
+Building off of the decision tree shown in Figure 6, Figure 7 shows the decision tree an offender uses to decide whether to commit a crime when motivation is introduced as a factor.
+
+![motivation_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/MotivatedDecisionTree.png)
+*Figure 7. The offender's decision tree based on motivation in CrimeWorld 2.0.*
 
 ### A. Results
 
@@ -115,13 +116,13 @@ After running simulations using our new model, we generate the following figures
 
 ![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)
 
-*Figure 9.1. The number of crimes committed for varying values of punishment.*
+*Figure 8.1. The number of crimes committed for varying values of punishment.*
 
 ![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
 
-*Figure 9.2. The number of crimes committed for varying proportions of punishment.*
+*Figure 8.2. The number of crimes committed for varying proportions of punishment.*
 
-#### For Figure 9.1, we observe a downward trend in number of crimes; however, at a punishment value of 70, there is an extreme spike in number of crimes before dipping to a global minimum at a punishment value of 80. In Figure 9.2, In comparing Figures 9.1 and 9.2, we can see that CrimeWorld 2.0 has the lowest amount of crime when the punishment fine is a half of the offender's wealth. Otherwise, CrimeWorld 2.0 should have a set punishment value of 80. 
+#### For Figure 8.1, we observe a downward trend in number of crimes; however, at a punishment value of 70, there is an extreme spike in number of crimes before dipping to a global minimum at a punishment value of 80. In Figure 8.2, In comparing Figures 8.1 and 8.2, we can see that CrimeWorld 2.0 has the lowest amount of crime when the punishment fine is a half of the offender's wealth. Otherwise, CrimeWorld 2.0 should have a set punishment value of 80. 
 
 ## III. Conclusion
 
