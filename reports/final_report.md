@@ -122,7 +122,7 @@ After running simulations using our new model, we generate the following figures
 
 *Figure 8.2. The number of crimes committed for varying proportions of punishment.*
 
-#### For Figure 8.1, we observe a downward trend in number of crimes; however, at a punishment value of 70, there is an extreme spike in number of crimes before dipping to a global minimum at a punishment value of 80. In Figure 8.2, In comparing Figures 8.1 and 8.2, we can see that CrimeWorld 2.0 has the lowest amount of crime when the punishment fine is a half of the offender's wealth. Otherwise, CrimeWorld 2.0 should have a set punishment value of 80. 
+For Figure 8.1, we observe a downward trend in number of crimes that levels our at approximately 8063; however, at a punishment value of 70, there is an extreme spike in number of crimes. From this figure, we can see that at a punishment value of 100, the number of robberies reaches the minimum. Any punishment value more than 100 is never lower than 100. In Figure 8.2, we can see that there is a global maximum at a punishment ratio of 0.2 and a global minimum at a punishment ratio of 0.5. In comparing Figures 8.1 and 8.2, we can see that CrimeWorld 2.0 has the lowest amount of crime when the punishment fine is a half of the offender's wealth. Otherwise, CrimeWorld 2.0 should have a set punishment value of 100. The extreme spikes in both figures indicates that a fine should not be an arbitrary value but one that can be proven to be one that reduces the number of crimes the most. 
 
 ## III. Conclusion
 
