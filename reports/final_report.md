@@ -98,12 +98,16 @@ When a robbery is committed, motivation is recalculated with this formula. The m
 
 ### A. Results
 
+After running simulations using our new model, we generate the following figures to show the number of crimes committed for differing values and proportions of punishment.
+
 ![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)
+
+*Figure 5.1. The number of crimes committed for varying values of punishment.*
 
 ![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
 
+*Figure 5.2. The number of crimes committed for varying proportions of punishment.*
 
-**INSERT INTERPRETATIONS HERE**
 #### In comparing Figures 4 and 5, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. Figure 5 demonstrates an unexpected behaviour of periodic rises and falls. There is an overall increase in the number of robberies, but at punishment ratios of 0.2, 0.5 and 0.8 the number of robberies drop. 
 
 
