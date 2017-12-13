@@ -16,13 +16,17 @@ We would like to acknowledge that we base our model off of Groff's<sup>5</sup> m
 
 For each time step, 20% of Citizens have the potential to commit a crime. This proportion is based on data cited by Groff, which states that the proportion of civilians who have committed a crime in Seattle is approximately 20%.<sup>9</sup> If one of these Citizens' wealth is negative, however, they automatically commit the crime, instead of going through the decision-making process explained below. Citizens who are at home during a given time step cannot rob others, nor can they be robbed.
 
-According to Groff's experiment,<sup>5</sup> a variety of factors affect an offender's decision to commit a crime. Consider several agents at a single node; some might be police and the rest might be offenders trying to find a target amongst each other. The first factor the offenders must consider is whether there are police at the node, since no crimes may be committed in the presence of a police officer. However, if there are no police officers, the offenders must consider several other factors, which are summarized in Figure 1.
+According to Groff's experiment,<sup>5</sup> a variety of factors affect an offender's decision to commit a crime. Consider several agents at a single node; some might be police and the rest might be offenders trying to find a target amongst each other. The first factor the offenders must consider is whether there are police at the node, since no crimes may be committed in the presence of a police officer. However, if there are no police officers, the offenders must consider several other factors, which are summarized in Figure 1.1.
 
 ![decision tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/decision_tree.png)
 
-*Figure 1. An offender's decision tree<sup>5</sup>; how an offender decides whether to commit a crime.*
+*Figure 1.1. An offender's decision tree<sup>5</sup>; how an offender decides whether to commit a crime.*
 
-As Figure 1 indicates, if there are no police officers in a node, the second factor the offenders must consider is the guardianship of other agents present - a variable represented by `G`.
+![our decision tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/GroffAlteredDecisionTree.png)
+
+*Figure 1.2. An offender's decision tree, as modified from Groff's original decision tree.*
+
+As Figure 1.1 indicates, if there are no police officers in a node, the second factor the offenders must consider is the guardianship of other agents present - a variable represented by `G`.
 
 #### `G = (N`<sub>agents</sub>` - 2) + P`
 
@@ -32,7 +36,7 @@ Now, assume `G <= 1` and the offender has decided to commit the crime. Which age
 
 #### `S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
 
-In Groff's implementation, if `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they do not rob them. Groff uses GIS software, which is why it is necessary for Groff to use `S` to determine whether to rob a target. Since we do not use GIS software, however, we remove `S` from the simulation since offenders in our model look for the wealthiest citizen in the nodes they are in to rob, thereby removing the redundancy of checking guardian capability.
+In Groff's implementation, if `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they do not rob them. We decided that this check is unnecessary in the context of our experiment; according to Groff's implementation, there is a higher chance that an offender will rob another Citizen who is wealthier than them, but the same offender might actually rob other Citizens who are of equal or lesser wealth, as well, albeit with lower likelihood. As a result, we omitted `S` because we believe that in the long run, the number of crimes committed will not be different between a model in which offenders only rob Citizens wealthier than them (our model) and a model where offenders mainly rob wealthier Citizens, but have a chance of indiscriminately robbing other Citizens (Groff's model). Our modified version of Groff's decision tree is shown in Figure 1.2.
 
 ### B. Results of our initial model
 
@@ -71,7 +75,7 @@ For the purposes of measuring how closely our model matches Groff's, we also fin
 
 From Figure 3.2, we observe that the differences in the average numbers of robberies in CrimeWorld for varying times away from home quantitatively differ from that of Groff's implementation. This is likely due to the fact that her simulation takes into account the shape and neighborhoods of Seattle, and because Groff runs her simulations for a year's worth of time, whereas we run ours for about 30 days due to time limitations. Qualitatively, however, the differences in average number of robberies in Crimeworld follow the pattern of that in Groff's simulation; if we multiply each value we obtain by a factor between 3 and 5, we output values that are the same as Groff's. For example, for `I=0.3` and `J=0.4`, the mean difference is -21.39 in Groff's experiment and -4.73 in ours. If we multiply our result by 4.52, however, our result matches Groff's. Similarly, for `I=0.3` and `J=0.5`, the mean difference is -40.58 in Groff's experiment and -10.91 in ours. Again, if we multiply our result by 3.72, our result matches Groff's. We summarize the factoral differences between our results and Groff's in Figure 4.
 
-| I   | J   | Our Mean Difference | Groff's Mean Difference | Factor Difference (Groff's / Our Results) |
+| I   | J   | Our Mean Difference | Groff's Mean Difference | Difference Factor (Groff's / Our Results) |
 | --- | --- | ---                 | ---                     | ---                                       |
 | 0.3 | 0.4 | -4.73               | -21.39                  | 4.52                                      |
 | 0.3 | 0.5 | -10.91              | -40.58                  | 3.72                                      |
@@ -124,13 +128,15 @@ After running simulations using our new model, we generate the following figures
 
 For Figure 8.1, we observe a downward trend in number of crimes that levels our at approximately 8063; however, at a punishment value of 70, there is an extreme spike in number of crimes. From this figure, we can see that at a punishment value of 100, the number of robberies reaches the minimum. Any punishment value more than 100 is never lower than 100. In Figure 8.2, we can see that there is a global maximum at a punishment ratio of 0.2 and a global minimum at a punishment ratio of 0.5. In comparing Figures 8.1 and 8.2, we can see that CrimeWorld 2.0 has the lowest amount of crime when the punishment fine is a half of the offender's wealth. Otherwise, CrimeWorld 2.0 should have a set punishment value of 100. The extreme spikes in both figures indicates that a fine should not be an arbitrary value but one that can be proven to be one that reduces the number of crimes the most. 
 
-## III. Conclusion
-
-In conclusion, we find that punishing offenders by removing half of their wealth is the most effective punishment in terms of lowering the total number of crimes committed. In the context of the real world, this is different from how punishment is allotted for real robberies; in Washington state, theft of the third degree is punishable by a $5,000 fine, increasing to $10,000 for the second degree and $20,000 for the first degree.<sup>1</sup> For some people, $20,000 is not a significant amount of money; it's only 2% of the wealth of a person with a million dollars. However, for someone with no wealth who only makes enough to cover the cost of living from year to year (approximately $53,712), it's almost 40% of the money they need to live comfortably. Should they not be able to make ends meet, there are several things this person can do to improve their situation, one of which is to turn to crime. Based on the results of our experiment, we believe that the best way to fairly punish all criminals, regardless of their wealth, is to remove a proportion of their wealth. We acknowledge that there are countless factors that we do not account for with our model, since the real world is much more complex than our model, but our results are consistent with the idea that punishment should be a proportional value, not a fixed value.
+## III. Future Work
 
 There is room for several different extensions, which can improve the applicability of our experiment to the real world. For one, it might be an interesting experiment to analyze the number of Citizens who go into debt throughout the simulation because this may inspire some analysis of the effects on Citizens of the amount of punishment and their cost of living. The purpose of punishment is to lower the number of crimes offenders commit, and the cost of living in any city should be low enough that even a Citizen with a minimal income can get by. However, there must be a point where either the cost of living is too high, resulting in more Citizens falling into debt and therefore committing more crimes, or the cost of punishment is too high, resulting in more Citizens falling into debt and remaining in debt as the risk of committing a crime and getting caught is too high, or both.
 
-## IV. Annotated Bibliography
+## IV. Conclusion
+
+In conclusion, we find that punishing offenders by removing half of their wealth is the most effective punishment in terms of lowering the total number of crimes committed. In the context of the real world, this is different from how punishment is allotted for real robberies; in Washington state, theft of the third degree is punishable by a $5,000 fine, increasing to $10,000 for the second degree and $20,000 for the first degree.<sup>1</sup> For some people, $20,000 is not a significant amount of money; it's only 2% of the wealth of a person with a million dollars. However, for someone with no wealth who only makes enough to cover the cost of living from year to year (approximately $53,712), it's almost 40% of the money they need to live comfortably. Should they not be able to make ends meet, there are several things this person can do to improve their situation, one of which is to turn to crime. Based on the results of our experiment, we believe that the best way to fairly punish all criminals, regardless of their wealth, is to remove a proportion of their wealth. We acknowledge that there are countless factors that we do not account for with our model, since the real world is much more complex than our model, but our results are consistent with the idea that punishment should be a proportional value, not a fixed value.
+
+## Annotated Bibliography
 
 **1. Baker, Lewis, Schwisow and Laws. (2014). _A Guide to Theft Laws & Penalties in Washington State._ Baker, Lewis Schwisow & Laws, PLLC.**
 
