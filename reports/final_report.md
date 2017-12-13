@@ -167,3 +167,5 @@ This extensive report investigates the various causes of violent crime in the US
 **9. Visher CA, Roth JA (1986) _Participation in criminal careers._ In: Blumstein A, Cohen J, Roth JA,
 Visher CA (eds) Criminal careers and "Career Criminals", Vol I. National Academy Press,
 Washington DC, pp 211–291.**
+
+An article cited by Groff<sup>5</sup> regarding developing effective crime control policies.
