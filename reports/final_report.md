@@ -102,7 +102,7 @@ In CrimeWorld 2.0, Citizens start out with different values for wealth and incom
 
 With the introduction of punishment, we also implement motivation, the main mechanism that determines whether a Citizen commits a crime. Motivation increases depending on how little wealth a Citizen has and how many times a Citizen successfully commits crimes, and decreases depending on how many times a Citizen has been punished. These relationships are defined by the equation below, where `M` is motivation, `S` is the number of times a Citizen succeeds in committing crime, and `C` is the number of times a Citizen is caught committing crime. 
 
-![altered_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/MotivationDecisionTree.png)
+![motivation_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/MotivatedDecisionTree.png)
 *Figure 8. The offender's decision tree based on motivation in CrimeWorld*
 
 ![formula](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/formula.png)
@@ -113,15 +113,11 @@ When a robbery is committed, motivation is recalculated with this formula. The m
 
 After running simulations using our new model, we generate the following figures to show the number of crimes committed for differing values and proportions of punishment.
 
-![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)
+![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
 
-*Figure 9.1. The number of crimes committed for varying values of punishment.*
+*Figure 9.1. The number of crimes committed for varying values of punishment.      Figure 9.2. The number of crimes committed for varying proportions of punishment.*
 
-![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
-
-*Figure 9.2. The number of crimes committed for varying proportions of punishment.*
-
-#### In comparing Figures 9.1 and 9.2, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. Figure 9.2 demonstrates an unexpected behaviour of periodic rises and falls. There is an overall increase in the number of robberies, but at punishment ratios of 0.2, 0.5 and 0.8 the number of robberies drop. 
+#### For Figure 9.1, we observe a downward trend in number of crimes; however, at a punishment value of 70, there is an extreme spike in number of crimes before dipping to a global minimum at a punishment value of 80. In Figure 9.2, In comparing Figures 9.1 and 9.2, we can see that CrimeWorld 2.0 has the lowest amount of crime when the punishment fine is a half of the offender's wealth. Otherwise, CrimeWorld 2.0 should have a set punishment value of 80. 
 
 
 ## IV. Annotated Bibliography
