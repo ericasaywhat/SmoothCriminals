@@ -86,7 +86,7 @@ From Figure 3.2, we observe that the differences in the average numbers of robbe
 
 *Figure 4. Factoral differences between our results and Groff's results for the mean differences between the average numbers of robberies per node for different percentages of time away from home.*
 
-## III. A CrimeWorld full of punishment (CrimeWorld 2.0)
+## II. A CrimeWorld full of punishment (CrimeWorld 2.0)
 
 Our version of CrimeWorld, as implemented according to Groff's experiment, does not include punishment for committing crimes. In fact, when an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node, and if so, the offender simply does not rob anyone, effectively avoiding punishment. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
 
@@ -123,6 +123,11 @@ After running simulations using our new model, we generate the following figures
 
 #### For Figure 9.1, we observe a downward trend in number of crimes; however, at a punishment value of 70, there is an extreme spike in number of crimes before dipping to a global minimum at a punishment value of 80. In Figure 9.2, In comparing Figures 9.1 and 9.2, we can see that CrimeWorld 2.0 has the lowest amount of crime when the punishment fine is a half of the offender's wealth. Otherwise, CrimeWorld 2.0 should have a set punishment value of 80. 
 
+## III. Conclusion
+
+In conclusion, we find that punishing offenders by removing half of their wealth is the most effective punishment in terms of lowering the total number of crimes committed. In the context of the real world, this is different from how punishment is allotted for real robberies; in Washington state, theft of the third degree is punishable by a $5,000 fine, increasing to $10,000 for the second degree and $20,000 for the first degree.<sup>XXX</sup> For some people, $20,000 is not a significant amount of money; it's only 2% of the wealth of a person with a million dollars. However, for someone with no wealth who only makes enough to cover the cost of living from year to year (approximately $53,712), it's almost 40% of the money they need to live comfortably. Should they not be able to make ends meet, there are several things this person can do to improve their situation, one of which is to turn to crime. Based on the results of our experiment, we believe that the best way to fairly punish all criminals, regardless of their wealth, is to remove a proportion of their wealth. We acknowledge that there are countless factors that we do not account for with our model, since the real world is much more complex than our model, but our results are consistent with the idea that punishment should be a proportional value, not a fixed value.
+
+There is room for several different extensions, which can improve the applicability of our experiment to the real world. For one, it might be an interesting experiment to analyze the number of Citizens who go into debt throughout the simulation because this may inspire some analysis of the effects on Citizens of the amount of punishment and their cost of living. The purpose of punishment is to lower the number of crimes offenders commit, and the cost of living in any city should be low enough that even a Citizen with a minimal income can get by. However, there must be a point where either the cost of living is too high, resulting in more Citizens falling into debt and therefore committing more crimes, or the cost of punishment is too high, resulting in more Citizens falling into debt and remaining in debt as the risk of committing a crime and getting caught is too high, or both.
 
 ## IV. Annotated Bibliography
 
