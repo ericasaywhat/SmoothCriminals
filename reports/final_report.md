@@ -28,7 +28,11 @@ As Figure 1 indicates, if there are no police officers in a node, the second fac
 
 `G` depends on two other variables. `N`<sub>agents</sub> is the total number of agents present at a given node, and 2 is subtracted from this total to account for the offender and their potential target. `P` is a randomly selected number between -2 and 2 that represents the offender's perception of the capability of the other citizens who are present. If `G < 1`, the offender determines that there are not enough capable guardians present, so they should commit a crime. If `G == 1`, the offender is unsure if there are capable guardians present, and so makes a random decision to commit the crime. And finally, if `G > 1`, the offender determines that there are capable guardians present and they should therefore not commit the crime.
 
-Now, assume `G <= 1` and the offender has decided to commit the crime. Which agent should the offender offend? The offender finds the wealthiest person in that node and robs that person. **PUT S BACK IN HERE OR SO HELP ME (also explain why we didn't really use it)**
+Now, assume `G <= 1` and the offender has decided to commit the crime. Which agent should the offender offend? The offender finds the wealthiest person in that node and robs that person. 
+
+#### `S = (W`<sub>target</sub>` - W`<sub>offender</sub>`) + P`
+
+In Groff's implementation, if `S >= 0`, the offender determines that the target is suitably wealthy and robs them. If `S < 0`, the offender determines that the target is not suitably wealthy, so they do not rob them. Since we are using Python and not the GIS software, however, we remove S from the simulation since our criminal looks for the wealthiest citizen in the node to rob and remove the redundancy of checking guardian capability.
 
 ### B. Results of our initial model
 
@@ -65,7 +69,7 @@ For the purposes of measuring how closely our model matches Groff's, we also fin
 
 *Figure 3.2. A comparison of the average number of robberies per node for different percentages of time away from home in our model.*
 
-From Figure 3, we observe that the differences in the average numbers of robberies in CrimeWorld for varying times away from home quantitatively differ from that of Groff's implementation. This is likely due to the fact that her simulation takes into account the shape and neighborhoods of Seattle, and because Groff runs her simulations for a year's worth of time, whereas we run ours for about 30 days due to time limitations. Qualitatively, however, the differences in average number of robberies in Crimeworld follow the pattern of that in Groff's simulation; if we multiply each value we obtain by a factor between 3 and 5, we output values that are the same as Groff's. For example, for `I=0.3` and `J=0.4`, the mean difference is -21.39 in Groff's experiment and -4.73 in ours. If we multiply our result by 4.52, however, our result matches Groff's. Similarly, for `I=0.3` and `J=0.5`, the mean difference is -40.58 in Groff's experiment and -10.91 in ours. Again, if we multiply our result by 3.72, our result matches Groff's. We summarize the factoral differences between our results and Groff's in Figure 4.
+From Figure 3.2, we observe that the differences in the average numbers of robberies in CrimeWorld for varying times away from home quantitatively differ from that of Groff's implementation. This is likely due to the fact that her simulation takes into account the shape and neighborhoods of Seattle, and because Groff runs her simulations for a year's worth of time, whereas we run ours for about 30 days due to time limitations. Qualitatively, however, the differences in average number of robberies in Crimeworld follow the pattern of that in Groff's simulation; if we multiply each value we obtain by a factor between 3 and 5, we output values that are the same as Groff's. For example, for `I=0.3` and `J=0.4`, the mean difference is -21.39 in Groff's experiment and -4.73 in ours. If we multiply our result by 4.52, however, our result matches Groff's. Similarly, for `I=0.3` and `J=0.5`, the mean difference is -40.58 in Groff's experiment and -10.91 in ours. Again, if we multiply our result by 3.72, our result matches Groff's. We summarize the factoral differences between our results and Groff's in Figure 4.
 
 | I   | J   | Our Mean Difference | Groff's Mean Difference | Factor Difference (Groff's / Our Results) |
 | --- | --- | ---                 | ---                     | ---                                       |
@@ -86,11 +90,20 @@ From Figure 3, we observe that the differences in the average numbers of robberi
 
 Our version of CrimeWorld, as implemented according to Groff's experiment, does not include punishment for committing crimes. In fact, when an offender decides whether to commit a crime in a node, they also consider whether there are any police agents in the node, and if so, the offender simply does not rob anyone, effectively avoiding punishment. We propose a version of CrimeWorld where offenders do get punished if they are caught committing crime. We hypothesize that this version of CrimeWorld will result in higher crime rates and more overall crimes committed. In this CrimeWorld full of punishment, we increase the motivation of offenders who commit crimes successfully and decrease the motivation of offenders who are caught while committing crimes.
 
+![altered_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/GroffAlteredDecisionTree.png)
+*Figure 6. The offender's decision tree in CrimeWorld*
+
 We hypothesize that when deterrence in the form of punishment is introduced to CrimeWorld, the number of crimes committed will increase. This contradicts the rationale behind deterrence, which is that when an offender is punished, the frequency and likelihood of future offenses is reduced.<sup>2</sup> The reasoning behind our hypothesis is that the factors that drive offenders to commit crimes outweigh the factors that deter them; successfully committing a crime and needing more wealth both contribute to an offender's motivation to commit crime, while only being caught lowers that motivation. Furthermore, people in a state where they cannot afford the necessary living expenses of their location any longer are more likely to turn to crime in order to improve their situations, since they have little left to lose.
 
 In CrimeWorld 2.0, Citizens start out with different values for wealth and income. As a result, we introduce economically diverse Citizens; there are some Citizens who have wealth but no income (potentially like real-world retirees), some Citizens who have income but no initial wealth (potentially like real-world immigrants with jobs), and some Citizens who have no wealth and no income (potentially like real-world homeless people), as well as others. We also implement a cost of living value, based on the cost of living in Seattle, which we calculate to be approximately $53,712 per year.<sup>4</sup> Another major change we implement from our original model is that the police officers in CrimeWorld 2.0 are undercover, such that if a crime is committed while a police officer is in a given node, the Citizen(s) who commit a crime will be punished. We run our simulation for two different types of punishments; each offending Citizen pays either a set fine for every crime they are caught committing, or a fine that is proportional to how wealthy the Citizen is.
 
+![wealth_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/ShrewdCitizenDecisionTree.png)
+*Figure 7. The offender's decision tree based on wealth in CrimeWorld 2.0*
+
 With the introduction of punishment, we also implement motivation, the main mechanism that determines whether a Citizen commits a crime. Motivation increases depending on how little wealth a Citizen has and how many times a Citizen successfully commits crimes, and decreases depending on how many times a Citizen has been punished. These relationships are defined by the equation below, where `M` is motivation, `S` is the number of times a Citizen succeeds in committing crime, and `C` is the number of times a Citizen is caught committing crime. 
+
+![altered_decision_tree](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/MotivationDecisionTree.png)
+*Figure 8. The offender's decision tree based on motivation in CrimeWorld*
 
 ![formula](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/formula.png)
 
@@ -102,13 +115,13 @@ After running simulations using our new model, we generate the following figures
 
 ![values](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_values.png)
 
-*Figure 5.1. The number of crimes committed for varying values of punishment.*
+*Figure 9.1. The number of crimes committed for varying values of punishment.*
 
 ![proportions](https://github.com/ericasaywhat/SmoothCriminals/blob/master/reports/punishment_ratio.png)
 
-*Figure 5.2. The number of crimes committed for varying proportions of punishment.*
+*Figure 9.2. The number of crimes committed for varying proportions of punishment.*
 
-#### In comparing Figures 4 and 5, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. Figure 5 demonstrates an unexpected behaviour of periodic rises and falls. There is an overall increase in the number of robberies, but at punishment ratios of 0.2, 0.5 and 0.8 the number of robberies drop. 
+#### In comparing Figures 9.1 and 9.2, we can see that CrimeWorld 2.0 has the lowest amount of crime at a set fine value of 80. Otherwise, CrimeWorld 2.0 is better off without punishment. Figure 9.2 demonstrates an unexpected behaviour of periodic rises and falls. There is an overall increase in the number of robberies, but at punishment ratios of 0.2, 0.5 and 0.8 the number of robberies drop. 
 
 
 ## IV. Annotated Bibliography
